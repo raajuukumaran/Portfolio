@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Rajesh Kumar</title>
+    <link rel="icon" type="image/x-icon" href="images.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item {
+            background: #e0e7ff;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-item h3 {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .skill-item p {
+            color: #666;
+        }
+
+        .details {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .details.active {
+            display: block;
+        }
+
+        .details .skill-item {
+            background: #f0f4f8;
+            margin-bottom: 1rem;
+        }
+
+        .wfh-section {
+            background-color: #f7f7f7;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .wfh-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .wfh-section p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            bottom: 0;
+        }
+
+        footer button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        footer button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="logo">
+            <img src="lr.jpg" alt="Rajesh Kumar Logo" onclick="toggleSkills('frontend')">
+        </div>
+        <div class="skills-grid">
+            <div class="skill-item" onclick="toggleSkills('frontend')">
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript, React, Angular</p>
+            </div>
+            <div class="skill-item" onclick="toggleSkills('backend')">
+                <h3>Backend</h3>
+                <p>Node.js, Express, MySQL, MongoDB</p>
+            </div>
+            <div class="skill-item" onclick="toggleSkills('design')">
+                <h3>Design</h3>
+                <p>UI/UX, Figma, Adobe XD</p>
+            </div>
+        </div>
+
+        <div class="details" id="frontend">
+            <h2>Frontend Skills</h2>
+            <div class="skill-item">
+                <h3>HTML5</h3>
+                <p>Crafting semantic and accessible HTML.</p>
+            </div>
+            <div class="skill-item">
+                <h3>CSS3</h3>
+                <p>Responsive design with Flexbox and Grid.</p>
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <p>Interactive web features and DOM manipulation.</p>
+            </div>
+            <div class="skill-item">
+                <h3>React</h3>
+                <p>Building reusable components and state management.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Angular</h3>
+                <p>Building dynamic and modular web applications.</p>
+            </div>
+        </div>
+
+        <div class="details" id="backend">
+            <h2>Backend Skills</h2>
+            <div class="skill-item">
+                <h3>Node.js</h3>
+                <p>Server-side scripting and asynchronous programming.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Express</h3>
+                <p>Building RESTful APIs with middleware support.</p>
+            </div>
+            <div class="skill-item">
+                <h3>MySQL</h3>
+                <p>Relational database management and querying.</p>
+            </div>
+            <div class="skill-item">
+                <h3>MongoDB</h3>
+                <p>Document-oriented database with flexible schema.</p>
+            </div>
+        </div>
+
+        <div class="details" id="design">
+            <h2>Design Skills</h2>
+            <div class="skill-item">
+                <h3>UI/UX</h3>
+                <p>Designing user interfaces and enhancing user experiences.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Figma</h3>
+                <p>Designing interfaces and prototyping.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Adobe XD</h3>
+                <p>Creating high-fidelity designs and interactive prototypes.</p>
+            </div>
+        </div>
+
+       
+
+ 
+
+    <script>
+        function toggleSkills(category) {
+            document.querySelectorAll('.details').forEach(function(detail) {
+                detail.classList.remove('active');
+            });
+            document.getElementById(category).classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
